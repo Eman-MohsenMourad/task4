@@ -1,0 +1,31 @@
+<p>task4 works!</p>
+<button (click)="openForm()">Open Form</button>
+
+<div *ngIf="isFormOpen">
+  <!-- HTML form code goes here -->
+<form (ngSubmit)="addItem()">
+    <input type="text" [(ngModel)]="item.id" placeholder="ID" required>
+    <input type="text" [(ngModel)]="item.name" placeholder="Name" required>
+    <input type="text" [(ngModel)]="item.username" placeholder="UserName" required>
+    <input type="text" [(ngModel)]="item.phonenumber" placeholder="phone" required>
+    <button type="submit">Add Item</button>
+  </form>
+</div>
+
+    
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of myArray">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.phonenumber }}</td>
+      </tr>
+    </tbody>
+  </table>
